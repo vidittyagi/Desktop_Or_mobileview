@@ -1,5 +1,5 @@
 import "./styles.css";
-import Hompage from "./Components/Homepage";
+import Hompage from "./Components/Homepage.jsx";
 
 export default function App() {
   return (
