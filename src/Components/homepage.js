@@ -71,7 +71,18 @@ let useStyles = makeStyles((theme) => ({
     height: "1010px",
     left: "0px",
     top: "70px",
-    background: "#6FCF97"
+    background: "#6FCF97",
+    [theme.breakpoints.down("xs")]: {
+      display:"none",
+    }
+  },
+  sideBarmobile:{
+    [theme.breakpoints.down("xs")]: {
+      position: "relative",
+      width: "240px",
+      height: "640px",
+      background: "#6FCF97",
+    }
   },
   title: {
     position: "absolute",
@@ -90,6 +101,37 @@ let useStyles = makeStyles((theme) => ({
   },
   backgroundofitems: {
     background: "#E5E5E5"
-  }
+  },
+  lines1: {
+    [theme.breakpoints.down("xs")]: {
+      position: "absolute",
+      width: "24px",
+      height: "3px",
+      left: "20px",
+      top: "25px",
+      background: "#BB6BD9",
+    }
+  },
+  lines2: {
+    [theme.breakpoints.down("xs")]: {
+      position: "absolute",
+      width: "24px",
+      height: "3px",
+      left: "20px",
+      top: "18px",
+      background: "#BB6BD9",
+    }
+  },
+  lines3: {
+    [theme.breakpoints.down("xs")]: {
+      position: "absolute",
+      width: "24px",
+      height: "3px",
+      left: "20px",
+      top: "11px",
+      background: "#BB6BD9",
+    }
+  },
+
 }));
 export default useStyles;

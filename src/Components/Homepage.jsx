@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   TextField,
   Grid,
@@ -16,9 +16,16 @@ import {
   Avatar
 } from "@material-ui/core";
 import useStyles from "./homepage";
+import line from '@material-ui/icons/Maximize';
 
 const homepage = () => {
   let classes = useStyles();
+  const [clicked,setclicked] = useState(false);
+
+  const btnclicked = ()=>{
+    setclicked(!clicked);
+  }
+
   return (
     <div className="classes.desktop">
       <Grid>
@@ -39,10 +46,29 @@ const homepage = () => {
 
         <Grid>
           <div className={classes.title}>Item 5</div>
+          <button className="linesbtn"
+          onClick={
+            ()=>{
+              btnclicked();
+            }
+          }>
+          <line className={classes.lines1}></line>
+          <line className={classes.lines2}></line>
+          <line className={classes.lines3}></line>
+          </button>
         </Grid>
-        {/* <Grid>
-          <div className={classes.sideBar}>Item 6</div>
-          </Grid> */}
+
+        {
+            (clicked)?(
+              <div className={classes.sideBarmobile}>Item 8</div>
+            )
+            :
+            (
+              (
+                <div className={classes.sideBar}>Item 6</div>
+              )
+            )
+        }
       </Grid>
     </div>
   );
